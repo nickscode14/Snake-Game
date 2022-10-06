@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements ActionListener {
     GamePanel(){
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
-        this.setBackground(Color.black);
+        this.setBackground(Color.lightGray);
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         startGame();
@@ -130,6 +130,11 @@ public class GamePanel extends JPanel implements ActionListener {
         g.setFont( new Font("Game Over Dude",Font.BOLD,75));
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (SCREEN_WIDTH - metrics2.stringWidth("Game Over"))/2, SCREEN_HEIGHT/2);
+        //Restart Game text
+        g.setColor(Color.white);
+        g.setFont(new Font("Times", Font.BOLD, 20));
+        FontMetrics metrics3 = getFontMetrics(g.getFont());
+        g.drawString("(Press space bar to restart the game)", (SCREEN_WIDTH - metrics3.stringWidth("(Press space bar to restart the game)"))/2, 380);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
